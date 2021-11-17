@@ -52,8 +52,8 @@ zomato.use("/user", User);
 zomato.use("/mail", MailService);
 zomato.use("/payments", Payments);
 
-
-zomato.listen(process.env.PORT || 4000, () =>
+const port = process.env.PORT || 4000;
+zomato.listen(port || 4000, () =>
   ConnectDB()
     .then(() => console.log("Server is up and running"))
     .catch((error) => {
